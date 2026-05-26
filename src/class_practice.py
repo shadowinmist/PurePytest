@@ -1,11 +1,3 @@
-# This is a sample Python script.
-from typing import SupportsIndex
-
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
 class Person:
     def __init__(self,name=None,age=None, roles=None, bits =None):
         self.name = name
@@ -43,6 +35,10 @@ class Person:
 
     def getMask(self):
         return self.bits
+
+    def __eq__(self, other):
+        # return True if self == other else False
+        return self.bits == other.bits
 
 #
 # p = Person(name="Marcin", age=30)
