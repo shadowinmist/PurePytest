@@ -18,9 +18,13 @@ class Person:
         return True if self.bits & check_bits else False
 
     def __or__(self, other):
+        if not isinstance(other, Person):
+            return NotImplemented
         return Person(bits=(self.bits | other.bits))
 
     def __and__(self, other):
+        if not isinstance(other, Person):
+            return NotImplemented
         return Person(bits=(self.bits & other.bits))
 
     def show(self):
@@ -37,9 +41,9 @@ class Person:
         return self.bits
 
     def __eq__(self, other):
-        # return True if self == other else False
+        if not isinstance(other, Person):
+            return NotImplemented
         return self.bits == other.bits
-
 #
 # p = Person(name="Marcin", age=30)
 # p.grant(1)   # READ
